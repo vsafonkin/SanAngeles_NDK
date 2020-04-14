@@ -51,6 +51,7 @@ using Android.OS;
 using Android.Views;
 using System.Runtime.InteropServices;
 using Android.Content.PM;
+using EGLConfig = Android.Opengl.EGLConfig;
 
 namespace SanAngles
 {
@@ -127,5 +128,10 @@ namespace SanAngles
 		private static extern void nativeRender (IntPtr jnienv);
 		[DllImport ("sanangeles", EntryPoint = "Java_com_example_SanAngeles_DemoRenderer_nativeDone")]
 		private static extern void nativeDone (IntPtr jnienv);
-	}
+
+        public void OnSurfaceCreated(IGL10 gl, Javax.Microedition.Khronos.Egl.EGLConfig config)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
